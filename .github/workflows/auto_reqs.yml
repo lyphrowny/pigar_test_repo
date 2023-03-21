@@ -20,6 +20,7 @@ jobs:
             - name: Generate requirements.txt
               run: |
                 pigar gen --auto-select --question-answer yes
+            - uses: actions/checkout@v3
             - name: Commit report
               run: |
                 git config --global user.name 'Your Name'
