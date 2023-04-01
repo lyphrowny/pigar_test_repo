@@ -88,6 +88,14 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: wheelhouse/*.whl
+          
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+            author_name: BipBop
+            author_email: kmma@fh.4eva
+            message: "Add wheels"
+            add: "wheelhouse/*"
 
   # Build the source distribution under Linux
   build_sdist:
@@ -112,4 +120,12 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: dist/*.tar.gz
+
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+            author_name: BipBop
+            author_email: kmma@fh.4eva
+            message: "Add source"
+            add: "dist/*"
 
