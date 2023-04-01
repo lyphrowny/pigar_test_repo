@@ -2,7 +2,7 @@
 name: Wheel builder
 
 on:
-  push
+  workflow_dispatch
 
 jobs:
   # Build the wheels for Linux, Windows and macOS for Python 3.8 and newer
