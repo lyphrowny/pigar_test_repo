@@ -86,10 +86,10 @@ jobs:
         with:
             output-dir: wheels/wheelhouse/
             
-      - name: Store artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          path: wheels/wheelhouse/*.whl
+#      - name: Store artifacts
+#        uses: actions/upload-artifact@v3
+#        with:
+#          path: wheels/wheelhouse/*.whl
 
   # Build the source distribution under Linux
   build_sdist:
@@ -110,10 +110,10 @@ jobs:
             pip install -U pip setuptools wheel cython
             python setup.py sdist --dist-dir wheels
 
-      - name: Store artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          path: wheels/*.tar.gz
+#      - name: Store artifacts
+#        uses: actions/upload-artifact@v3
+#        with:
+#          path: wheels/*.tar.gz
 
 
             
@@ -127,10 +127,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Download artifacts
-        uses: actions/download-artifact@v3
-        with:
-          path: wheels
+#      - name: Download artifacts
+#        uses: actions/download-artifact@v3
+#        with:
+#          path: wheels
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9.1.1
