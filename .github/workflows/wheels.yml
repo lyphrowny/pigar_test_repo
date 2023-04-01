@@ -83,11 +83,13 @@ jobs:
           CIBW_ARCHS: all
           CIBW_MANYLINUX_X86_64_IMAGE: ${{ matrix.manylinux_image }}
           CIBW_MANYLINUX_I686_IMAGE: ${{ matrix.manylinux_image }}
-
+        with:
+            output-dir: wheels/wheelhouse/
+            
       - name: Store artifacts
         uses: actions/upload-artifact@v3
         with:
-          path: ./wheels/wheelhouse/*.whl
+          path: wheels/wheelhouse/*.whl
 
   # Build the source distribution under Linux
   build_sdist:
@@ -111,7 +113,7 @@ jobs:
       - name: Store artifacts
         uses: actions/upload-artifact@v3
         with:
-          path: ./wheels/*.tar.gz
+          path: wheels/*.tar.gz
 
 
             
@@ -136,5 +138,5 @@ jobs:
             author_name: BipBop
             author_email: kmma@fh.4eva
             message: "Add source"
-            add: "./wheels/*"
+            add: "wheels/*"
 
