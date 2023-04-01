@@ -87,7 +87,7 @@ jobs:
       - name: Store artifacts
         uses: actions/upload-artifact@v3
         with:
-          path: wheels/wheelhouse/*.whl
+          path: ./wheels/wheelhouse/*.whl
 
   # Build the source distribution under Linux
   build_sdist:
@@ -111,7 +111,7 @@ jobs:
       - name: Store artifacts
         uses: actions/upload-artifact@v3
         with:
-          path: wheels/*.tar.gz
+          path: ./wheels/*.tar.gz
 
 
             
@@ -136,5 +136,5 @@ jobs:
             author_name: BipBop
             author_email: kmma@fh.4eva
             message: "Add source"
-            add: "wheels/*"
+            add: "./wheels/*"
 
