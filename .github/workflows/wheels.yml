@@ -106,6 +106,7 @@ jobs:
       - name: Install dependencies  
         run: |
             pip install -U pip setuptools wheel cython
+            python setup.py sdist
 
       - name: Store artifacts
         uses: actions/upload-artifact@v3
