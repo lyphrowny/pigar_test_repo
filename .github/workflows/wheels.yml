@@ -133,7 +133,7 @@ jobs:
           path: wheels
 
       - name: Unpack artifacts
-        run: mv wheels/artifact/* wheels && rmdir wheels/artifact
+        run: mkdir wheels/wheelhouse && mv wheels/artifact/*.whl wheels/wheelhouse/ && mv wheels/artifact/*.tar.gz wheels && rmdir wheels/artifact
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9.1.1
