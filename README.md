@@ -1,2 +1,3 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
-![CI:Test](https://github.com/lyphrowny/pigar_test_repo/workflows/CI/badge.svg)
+
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/lyphrowny/pigar_test_repo/main.svg)](https://results.pre-commit.ci/latest/github/lyphrowny/pigar_test_repo/main)
