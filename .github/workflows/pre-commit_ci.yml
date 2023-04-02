@@ -1,18 +1,19 @@
 name: pre-commit.ci
 
 on:
-    push
+  push
 
 jobs:
-    run_pre_commit:
-        name: pre-commit
-        runs-on: ubuntu-latest
+  run_pre_commit:
+    name: pre-commit
+    runs-on: ubuntu-latest
 
     steps:
-        - name: Set PY env variable
-          run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
+    - name: Set PY env variable
+      run: |
+        echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
 
-        - uses: actions/cache@v1
-          with:
-            path: ~/.cache/pre-commit
-            key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
+    - uses: actions/cache@v1
+      with:
+        path: ~/.cache/pre-commit
+        key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
